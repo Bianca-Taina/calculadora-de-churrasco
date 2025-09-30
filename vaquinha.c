@@ -17,14 +17,14 @@ float calculaCarne(int qtdPessoas){
 
 // Procedimento para mostrar o resumo
 void mostraResumo(int qtdPessoas){
-    float carne = calculaCarne(qtdPessoas)
+    float carne = calculaCarne(qtdPessoas);
     float media = totalArrecadado / qtdPessoas;
     printf("\n===== RESUMO CHURRASCO =====\n");
     printf("Participantes: %d\n",qtdPessoas);
-    printf("Carne necessária: %.2f KG\n" carne);
+    printf("Carne necessária : %.2f KG\n", carne);
     printf("Total arrecadado: R$ %.2f\n",totalArrecadado);
-    printf("Média por pessoas: R$ %2f\n", media);
-    printf("==============================")
+    printf("Média por pessoa: R$ %.2f\n",media);
+    printf("==============================");
 
 }
 
@@ -36,6 +36,12 @@ int main(){
 
  printf("Digite o número de pessoas: ");
  scanf("%d",&pessoas);
+
+ for (int i=1 ; i<=pessoas; i++){
+    printf("Digite a contribuição do participante %d: R$ ");
+    scanf("%f", &valor);
+    adicionaContribuiçao(valor);
+ }
 
  mostraResumo(pessoas);
 }
